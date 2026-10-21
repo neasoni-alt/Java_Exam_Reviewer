@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITS Java Exam Reviewer (INF-304)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="hover-enabled">
+    <header>
+      <div class="header-inner">
+        <div class="title-row">
+          <h1>☕ ITS Java Exam Reviewer (INF-304)</h1>
+          <div class="stats-badge">
+            Score: <strong id="score-val">0</strong> /
+            <strong id="answered-val">0</strong> &nbsp;|&nbsp; Showing
+            <strong id="count-val">0</strong> questions
+          </div>
+        </div>
+
+        <div class="controls-row">
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Search question number, code, or keyword..."
+          />
+          <select id="domain-select">
+            <option value="ALL">All Domains</option>
+            <option value="1">Domain 1: Java Fundamentals</option>
+            <option value="2">
+              Domain 2: Data Types, Variables &amp; Expressions
+            </option>
+            <option value="3">Domain 3: Flow Control Implementation</option>
+            <option value="4">Domain 4: Object-Oriented Programming</option>
+            <option value="5">
+              Domain 5: Code Compilation &amp; Debugging
+            </option>
+          </select>
+
+          <label
+            class="toggle-label"
+            title="Automatically peek at the answer when your mouse pointer hovers over the box"
+          >
+            <input type="checkbox" id="hover-toggle" checked />
+            Hover Pointer to Peek
+          </label>
+
+          <button class="btn" id="toggle-all-btn">Reveal All</button>
+          <button class="btn" id="reset-btn">Reset</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="questions-container"></main>
+
+    <!-- Load data first, then application logic -->
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
