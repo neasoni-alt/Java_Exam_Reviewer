@@ -1240,7 +1240,7 @@ const QUESTIONS = [
   ],
 
   // ==================== DOMAIN 3: FLOW CONTROL IMPLEMENTATION (20/20 COMPLETE) ====================
-  // --- 3.1 Construct and evaluate code that uses branching statements ---
+
   [
     "3.1.1",
     "What is the output of the following code segment?",
@@ -1437,82 +1437,6 @@ const QUESTIONS = [
     ],
     2,
     "i starts at 0, and 0 * 2 is still 0, so i < 5 stays true forever. A loop ends only when something in its body moves the condition toward false.",
-  ],
-  // ==================== DOMAIN 3: FLOW CONTROL IMPLEMENTATION ====================
-  [
-    "3.1.1",
-    "What is the output of the following code segment?",
-    'int score = 92;\nString medal;\nif (score >= 70) {\n    medal = "Bronze";\n} else if (score >= 80) {\n    medal = "Silver";\n} else if (score >= 90) {\n    medal = "Gold";\n} else {\n    medal = "None";\n}\nSystem.out.println(medal);',
-    ["Gold", "Silver", "Bronze", "None"],
-    2,
-    "An if/else if chain stops at the first condition that is true. 92 >= 70 is true, so medal becomes Bronze, and the remaining conditions are never checked.",
-  ],
-  [
-    "3.1.2",
-    "What is the output of the following code segment?",
-    "char level = 'b';\nint bonus = 0;\nswitch (level) {\n    case 'a':\n        bonus += 100;\n    case 'b':\n        bonus += 50;\n    default:\n        bonus += 10;\n    case 'c':\n        bonus += 5;\n}\nSystem.out.println(bonus);",
-    ["65", "50", "60", "165"],
-    0,
-    "Execution starts at case 'b' and, with no break statements, falls through every label below it: 50 + 10 + 5 = 65.",
-  ],
-  [
-    "3.1.3",
-    "What is the output of the following code segment?",
-    'int a = 5, b = 10;\nif (a > 3)\n    if (b < 5)\n        System.out.println("X");\nelse\n    System.out.println("Y");',
-    ["X", "Nothing is printed.", "Y", "Both X and Y are printed."],
-    2,
-    "Without braces, an else pairs with the nearest preceding if that has no else, which is if (b < 5). That condition is false, so the else prints Y.",
-  ],
-  [
-    "3.1.4",
-    "What is the result of compiling and running the following code segment?",
-    'int age = 20;\nboolean member = false;\nboolean withParent = false;\nif (age >= 18 || member && withParent) {\n    System.out.println("Enter");\n} else {\n    System.out.println("Denied");\n}',
-    [
-      "Enter",
-      "Denied",
-      "Both Enter and Denied are printed.",
-      "Compilation fails because && and || are mixed without parentheses.",
-    ],
-    0,
-    "&& has higher precedence than ||, so the condition means age >= 18 || (member && withParent). age >= 18 is true, making the whole || expression true.",
-  ],
-  [
-    "3.1.9",
-    "What is the result of running the following code segment?",
-    "int count = 0;\nint x = 0;\nif (x != 0 && 10 / x > 1) {\n    count++;\n}\nif (x == 0 || count++ > 0) {\n    count += 10;\n}\nSystem.out.println(count);",
-    [
-      "It prints 10.",
-      "It prints 11.",
-      "It prints 0.",
-      "An ArithmeticException is thrown by 10 / x.",
-    ],
-    0,
-    "&& and || short-circuit. In the first condition, x != 0 is false, so 10 / x is never evaluated. In the second, x == 0 is true, so count++ is skipped and only count += 10 runs.",
-  ],
-
-  [
-    "3.2.1",
-    "What is the output of the following code segment?",
-    "int sum = 0;\nfor (int i = 1; i <= 10; i++) {\n    if (i % 3 == 0) {\n        continue;\n    }\n    sum += i;\n}\nSystem.out.println(sum);",
-    ["18", "37", "55", "3"],
-    1,
-    "continue skips the rest of the loop body when i is 3, 6, or 9. The sum of 1 to 10 is 55, and 55 - 18 = 37.",
-  ],
-  [
-    "3.2.2",
-    "What is the output of the following code segment?",
-    "int count = 0;\nfor (int i = 0; i < 3; i++) {\n    for (int j = 0; j < 3; j++) {\n        if (j > i) {\n            break;\n        }\n        count++;\n    }\n}\nSystem.out.println(count);",
-    ["9", "3", "1", "6"],
-    3,
-    "break exits only the inner loop. The inner loop counts 1 pass when i is 0, 2 when i is 1, and 3 when i is 2, for a total of 6.",
-  ],
-  [
-    "3.2.3",
-    "What is the output of the following code segment?",
-    "int n = 0;\nwhile (n > 0) {\n    n--;\n}\ndo {\n    n--;\n} while (n > 0);\nSystem.out.println(n);",
-    ["0", "1", "Nothing is printed, because the loop never ends.", "-1"],
-    3,
-    "The while loop checks n > 0 first, finds it false, and never runs. The do-while loop runs its body once before checking, so n becomes -1.",
   ],
 
   // ==================== DOMAIN 4: OBJECT-ORIENTED PROGRAMMING ====================
